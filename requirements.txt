@@ -1,0 +1,26 @@
+pandas
+numpy
+spacy
+nltk
+textblob
+vaderSentiment
+transformers
+scikit-learn
+matplotlib
+seaborn
+pyabsa
+mlflow
+jupyter
+pyyaml
+# Additional packages for extended pipeline
+flair
+bertopic
+sentence-transformers
+umap-learn
+hdbscan
+# For spaCy transformer model
+spacy-transformers
+# For ABSA custom checkpoints (if needed)
+torch
+# For compatibility
+joblib

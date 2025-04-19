@@ -1,0 +1,18 @@
+# Configuration for Extract Yelp Info pipeline
+random_seed: 42
+raw_data_path: data/raw/
+processed_data_path: data/processed/
+models_path: models/
+logs_path: logs/
+reports_path: reports/
+
+# Model hyperparameters
+absa:
+  aspects: ["food", "service", "price", "ambience"]
+lda:
+  n_topics: 10
+  max_iter: 10
+distilbert:
+  pretrained_model: distilbert-base-uncased
+  epochs: 3
+  batch_size: 16
