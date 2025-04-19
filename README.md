@@ -3,15 +3,13 @@
 ---
 
 ## Overview
-This project provides a modular, reproducible, and extensible NLP pipeline for extracting structured insights from the Yelp Open Dataset. It covers every stage from raw data ingestion to advanced analytics, including:
+This project provides a NLP pipeline for extracting structured insights from the Yelp Reviews Open Dataset. It covers every stage from raw data ingestion to understanding the sentiment of reviews, including:
 
-- Aspect-based sentiment analysis (ABSA)
 - Named Entity Recognition (NER)
 - Topic modeling
 - Sentiment classification
-- Automated evaluation and visualizations
-
-The pipeline is built entirely with open-source tools and is suitable for both research and production use. Every component is documented in detail for users of all backgrounds, including novices.
+- Aspect-based sentiment analysis (ABSA)
+- Evaluation
 
 ---
 
@@ -20,7 +18,6 @@ The pipeline is built entirely with open-source tools and is suitable for both r
 - [Project Structure](#project-structure)
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
-- [Testing](#testing)
 - [Key Files and Their Roles](#key-files-and-their-roles)
 - [Evaluation Metrics: Definitions & Interpretations](#evaluation-metrics-definitions--interpretations)
 - [Pipeline Flow](#pipeline-flow)
@@ -28,8 +25,6 @@ The pipeline is built entirely with open-source tools and is suitable for both r
 - [Models & Methods Used](#models--methods-used)
 - [Troubleshooting & Best Practices](#troubleshooting--best-practices)
 - [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 ---
 
 ## Project Structure
@@ -65,8 +60,6 @@ project/
 ├── reports/                        # Evaluation and topic keywords
 └── img/                            # Visualizations
 ```
-
----
 
 ---
 
@@ -115,19 +108,6 @@ python src/evaluate.py --task topic \
   --topic_keywords reports/topics_keywords.csv \
   --report reports/topic_coherence.json
 ```
-
----
-
-## Testing
-
-1. **Run all tests**
-    ```bash
-    pip install pytest
-    pytest tests/
-    ```
-2. **Test Coverage**
-    - Unit tests for preprocessing, sentiment, and integration.
-    - Add your own for ABSA, NER, topic modeling as needed.
 
 ---
 
@@ -304,29 +284,5 @@ python src/evaluate.py --task topic \
 - **Logging:** All scripts log progress and errors; check the `logs/` folder for details.
 - **Error Handling:** The pipeline skips steps with missing data and logs errors without crashing.
 - **Visualization Failures:** All plots are defensively coded to skip if required data is missing.
-
----
-
-## Contributing
-
-Contributions are welcome! Please open issues or pull requests for improvements, bug fixes, or new features.
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## Acknowledgements
-
-- [Yelp Open Dataset](https://www.yelp.com/dataset)
-- [PyABSA](https://github.com/yangheng95/PyABSA)
-- [spaCy](https://spacy.io/)
-- [scikit-learn](https://scikit-learn.org/)
-- [Hugging Face Transformers](https://huggingface.co/transformers/)
-- [gensim](https://radimrehurek.com/gensim/)
-- Inspired by [SF Brigade README template](https://github.com/sfbrigade/standard-readme-template)
 
 
