@@ -31,34 +31,10 @@ class LoggerSingleton:
     def get_logger():
         return LoggerSingleton().logger
 
-def load_config(config_path='config/config.yaml'):
-    """Load configuration from YAML file."""
-    logger = LoggerSingleton.get_logger()
-    try:
-        with open(config_path, 'r') as f:
-            config = yaml.safe_load(f)
-        logger.info(f"Loaded configuration from {config_path}")
-        return config
-    except Exception as e:
-        logger.error(f"Failed to load config from {config_path}: {e}")
-        # Return default configuration
-        return {
-            'random_seed': 42,
-            'raw_data_path': 'data/raw/',
-            'processed_data_path': 'data/processed/',
-            'models_path': 'models/',
-            'logs_path': 'logs/',
-            'reports_path': 'reports/',
-            'absa': {'aspects': ["food", "service", "price", "ambience"]},
-            'lda': {'n_topics': 10, 'max_iter': 10},
-            'distilbert': {'pretrained_model': 'distilbert-base-uncased', 'epochs': 3, 'batch_size': 16}
-        }
-
 def ensure_dirs():
     """Create necessary directories if they don't exist."""
     dirs = ["data/raw", "data/processed", "models", "logs", "reports", "img"]
     for d in dirs:
         os.makedirs(d, exist_ok=True)
 
-# Convenience function for pipeline entry points
-setup_logging = LoggerSingleton
+logger = LoggerSingleton.get_logger()
