@@ -59,4 +59,4 @@ class YelpBusinessIntelligence:
             raise
 
 pipeline = YelpBusinessIntelligence(load_config('config/config.yaml'), get_spark_session())
-pipeline.run()
+pipeline.execute()

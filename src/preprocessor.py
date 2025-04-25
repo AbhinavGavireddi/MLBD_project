@@ -9,7 +9,7 @@ class TextPreprocessor:
     """Handles text cleaning and basic feature extraction"""
     
     def __init__(self, config: dict):
-        self.text_col = config.get('text_column', 'text')
+        self.TEXT_COL = config.get('text_column', 'text')
         self.stopwords = StopWordsRemover.loadDefaultStopWords("english") + [
             "yelp", "restaurant", "food", "place", "go", "get"
         ]

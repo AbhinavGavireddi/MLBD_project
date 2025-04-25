@@ -20,7 +20,7 @@ class DataIngestion:
                 else:
                     raise ValueError(f"Unsupported file format: {self.REVIEWS_RAW}")
                 logger.info(
-                    f"[PySpark] Loaded {self.data.count()} reviews from {self.REVIEWS_RAW}"
+                    f"[PySpark] Loaded {data.count()} reviews from {self.REVIEWS_RAW}"
                 )
                 return data
         except Exception as e:

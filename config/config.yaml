@@ -1,10 +1,10 @@
 # Configuration for Extract Yelp Info pipeline
 random_seed: 42
-raw_data_path: data/raw/yelp_academic_dataset_review.json
-processed_data_path: data/processed/reviews.parquet
-models_path: models/
-logs_path: logs/
-reports_path: reports/
+raw_data_path: 'data/raw/yelp_academic_dataset_review.json'
+processed_data_path: 'data/processed/reviews.parquet'
+models_path: 'models/'
+logs_path: 'logs/'
+reports_path: 'reports/'
 
 # # Model hyperparameters
 # absa:
